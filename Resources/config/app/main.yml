@@ -1,0 +1,72 @@
+imports:
+    - { resource: "@BCCCronManagerBundle/Resources/config/assetic.yml" }
+
+yz_supervisor:
+    default_environment: "%kernel.environment%"
+    servers:
+        prod:
+            SUPERVISOR_01:
+                host: 192.168.0.1
+                username: guest
+                password: password
+                port: 9001
+            SUPERVISOR_02:
+                host: 192.168.0.2
+                username: guest
+                password: password
+                port: 9001
+        dev:
+            locahost:
+                host: 127.0.0.1
+                username: guest
+                password: password
+                port: 9001
+
+liip_monitor:
+    enable_controller: true
+
+snc_redis:
+    clients:
+        monolog:
+            type: phpredis
+            alias: monolog
+            logging: false
+            dsns:
+                - "%redis_monolog_dns%"
+        session:
+            type: phpredis
+            alias: session
+            dsns:
+                - "%redis_session_dns%"
+            logging: false
+        swiftmailer:
+            type: phpredis
+            alias: swiftmailer
+            logging: false
+            dsns:
+                - "%redis_swiftmailer_dns%"
+    monolog:
+        client: monolog
+        key: monolog
+    session:
+        client: session
+    swiftmailer:
+        client: swiftmailer
+        key: swiftmailer
+
+framework:
+    session:
+        handler_id: snc_redis.session.handler
+
+swiftmailer:
+    spool:
+        type: service
+        id: snc_redis.swiftmailer.spool
+
+monolog:
+    handlers:
+        main:
+            type: service
+            id: snc_redis.monolog.handler
+            level: error
+            handler: nested

@@ -1,0 +1,11 @@
+YZSupervisorBundle:
+    resource: "@YZSupervisorBundle/Resources/config/routing.xml"
+    prefix: /supervisors
+
+BCCCronManagerBundle:
+    resource: "@BCCCronManagerBundle/Resources/config/routing.xml"
+    prefix: /crons
+
+_monitor:
+    resource: "@LiipMonitorBundle/Resources/config/routing.xml"
+    prefix: /monitors

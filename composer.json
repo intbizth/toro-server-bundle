@@ -1,0 +1,44 @@
+{
+    "name": "toro/server-bundle",
+    "type": "symfony-bundle",
+    "description": "Server for Symfony2 projects.",
+    "keywords": ["server"],
+    "homepage": "https://github.com/intbizth/toro-server-bundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "liverbool",
+            "homepage": "https://github.com/liverbool"
+        }
+    ],
+    "require": {
+        "php": "^5.6|^7.0",
+        "guzzlehttp/guzzle": "^6.2",
+        "bcc/cron-manager-bundle": "^3.0",
+        "yzalis/supervisor-bundle": "^1.2",
+        "liip/monitor-bundle": "^2.3",
+        "snc/redis-bundle": "^2.0"
+    },
+    "require-dev": {
+        "doctrine/orm": "^2.4",
+        "phpspec/phpspec": "^3.1",
+        "phpunit/phpunit": "^5.6",
+        "twig/twig": "^1.0"
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "autoload": {
+        "psr-4": { "Toro\\Bundle\\ServerBundle\\": "" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Toro\\Bundle\\ServerBundle\\spec\\": "spec/" }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "extra": {
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}
