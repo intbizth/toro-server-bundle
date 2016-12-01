@@ -45,9 +45,9 @@ snc_redis:
             logging: false
             dsns:
                 - "%redis_swiftmailer_dns%"
-    monolog:
-        client: monolog
-        key: monolog
+    # monolog:
+    #     client: monolog
+    #     key: monolog
     session:
         client: session
     swiftmailer:
@@ -63,10 +63,10 @@ swiftmailer:
         type: service
         id: snc_redis.swiftmailer.spool
 
-monolog:
-    handlers:
-        main:
-            type: service
-            id: snc_redis.monolog.handler
-            level: error
-            handler: nested
+# monolog:
+#     handlers:
+#         main:
+#             type: service
+#             id: snc_redis.monolog.handler
+#             level: error
+#             handler: nested
