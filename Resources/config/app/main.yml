@@ -69,4 +69,3 @@ monolog:
             type: service
             id: snc_redis.monolog.handler
             level: error
-            handler: nested
