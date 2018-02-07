@@ -1,6 +1,3 @@
-imports:
-    - { resource: "@BCCCronManagerBundle/Resources/config/assetic.yml" }
-
 yz_supervisor:
     default_environment: "%kernel.environment%"
     servers:
