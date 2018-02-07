@@ -13,7 +13,6 @@
     ],
     "require": {
         "php": "^7.0",
-        "guzzlehttp/guzzle": "^6.2",
         "bcc/cron-manager-bundle": "^3.0",
         "yzalis/supervisor-bundle": "^1.2",
         "liip/monitor-bundle": "^2.3",
