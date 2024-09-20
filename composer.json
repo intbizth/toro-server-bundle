@@ -15,7 +15,6 @@
         "php": "^7.1",
         "guzzlehttp/guzzle": "^6.2",
         "bcc/cron-manager-bundle": "^3.0",
-        "yzalis/supervisor-bundle": "^1.2",
         "liip/monitor-bundle": "^2.3",
         "snc/redis-bundle": "^2.0",
         "wrep/daemonizable-command": "1.3.*"
